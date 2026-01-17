@@ -12,7 +12,7 @@ while attempts < max_attempts:
         guess = int(input("Enter your guess: "))
         attempts += 1
         if guess < 1 or guess > 100:
-            print("Keep it between 1 and 100.")
+            print("Please enter an integer between 1 and 100.")
             continue
         if guess < answer:
             print("Too low!")
@@ -22,7 +22,7 @@ while attempts < max_attempts:
             print(f"Correct! Guessed in {attempts} attempts.")
             break
     except ValueError:
-        print("Enter a valid number.")
+        print("Please enter a number.")
 
 if attempts >= max_attempts:
     print(f"Game over! Answer was {answer}.")
