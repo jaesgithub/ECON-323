@@ -20,22 +20,16 @@ while attempts < max_attempts:
             print("Too high!")
         else:
             print(f"Correct! Guessed in {attempts} attempts.")
+            play_again = input("Do you want to play again? (y/n) ")
+            if play_again.lower() == "y":
+                answer = random.randint(1, 100)
+                attempts = 0
+            else:
+                break
+                print("Thanks for playing!")
             break
     except ValueError:
         print("Please enter a number.")
 
 if attempts >= max_attempts:
     print(f"Game over! Answer was {answer}.")
-
-while True:
-    user_guess = input("Make a guess: ")
-    if user_guess.isdigit():
-        user_guess = int(user_guess)
-    else:
-        print("Please type a number next time.")
-        continue
-
-    if user_guess == answer:
-        print("Correct!")
-    else:
-        print("Incorrect!")
